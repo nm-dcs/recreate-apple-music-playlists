@@ -33,8 +33,7 @@ def get_track_property(track_data, key, default=''):
         # be the actual start of the path for other systems.
         # This part might need adjustment based on the OS.
         if path.startswith('/Users/'):
-            # A common representation for Mac paths.
-            # The example shows 'Macintosh HD' prefix, so we add it for consistency.
+            # For Mac users
             return 'Macintosh HD' + path
         return path
 
@@ -150,6 +149,5 @@ def extract_playlists_from_library(xml_path, output_dir='playlists'):
 if __name__ == '__main__':
     # The script will look for 'Library.xml' in the same directory it is run from.
     # You can change this to a full path if your file is elsewhere.
-    # e.g., 'C:/Users/YourUser/Music/iTunes/Library.xml'
     itunes_xml_file = 'Library.xml'
     extract_playlists_from_library(itunes_xml_file)
